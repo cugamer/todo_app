@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   root                     'general_pages#homepage'
   
-  get 'help'            => 'general_pages#help'
+  get 'help'                      => 'general_pages#help'
   
-  get 'signin'          => 'sessions#new'
-  post 'signin'         => 'sessions#create'
-  delete 'signout'      => 'sessions#destroy'
+  get 'signin'                    => 'sessions#new'
+  post 'signin'                   => 'sessions#create'
+  delete 'signout'                => 'sessions#destroy'
   
   resources 'users'
   
-  post 'createlist'     => 'lists#create'
+  post 'createlist'               => 'lists#create'
+  delete 'remove_list/:id'        => 'list#destroy', as: 'remove_list'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
