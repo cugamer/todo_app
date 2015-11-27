@@ -1,5 +1,10 @@
 <h1>Sign in to your account</h1>
 
+<ul>
+  <% flash.each do |msg_key, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
 
 <div class="wide-form">
   <%= form_for :session, url: signin_path do |f| %>
