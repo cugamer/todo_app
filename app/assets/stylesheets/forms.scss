@@ -1,0 +1,29 @@
+/* formpage styles */
+
+.wide-form{
+  width: 95%;
+  margin-left: 2.5%;
+  
+  label{
+    margin-left: 5px
+  }
+  
+  input{
+    width: 100%;
+    border-radius: 2px;
+  }
+  
+  input[type="submit"]{
+    width: 150px;
+    color: #fff;
+    background-color: #0066FF;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    float: left;
+    clear: both;
+    &:hover{
+      background-color: #E6E6E6;
+      color: #000;
+    }
+  }
+}
