@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   
   get 'help'            => 'general_pages#help'
   
+  get 'signup'          => 'sessions#new'
+  post 'signup'         => 'sessions#create'
+  delete 'signout'      => 'sessions#destroy'
+  
   resources 'users'
   
   # The priority is based upon order of creation: first created -> highest priority.
