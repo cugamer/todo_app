@@ -1,9 +1,18 @@
 <h1>Welcome to the Todo Application!</h1>
 
 <% if signed_in? %>
-  <% @lists.each do |list| %>
-    <ul id="list-container">
+  <div class="wide-form">
+    <%= form_for :list, url: createlist_path do |f| %>
+      <%= f.label "List name" %>
+      <%= f.text_field :name %>
+      
+      <%= f.submit "Create list" %>
+    <% end %>
+  </div>
+  
+  <ul id="list-container">
+    <% @lists.each do |list| %>
       <li class="list-item"><%= list.name %></li>
-    </ul>
-  <% end %>
+    <% end %>
+  </ul>
 <% end %>
