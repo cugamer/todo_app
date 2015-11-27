@@ -1,0 +1,13 @@
+<h1>Welcome, <%= @user.name %></h1>
+
+<ul>
+  <% flash.each do |msg_type, msg| %>
+    <li>
+      <%= msg %>
+    </li>
+  <% end %>  
+</ul>
+
+<p>Email: <%= @user.email %></p>
+
+<p>Valued member since <%= @user.created_at.strftime("%B %-d, %Y") %></p>
