@@ -1,4 +1,10 @@
 <% if signed_in? %>
+  <ul>
+    <% flash.each do |msg_key, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
   <div class="wide-form">
     <%= form_for :list, url: createlist_path do |f| %>
       <%= f.label "List name" %>
