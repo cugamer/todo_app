@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+  before_action :signed_in_user
+  before_action :correct_user, only: [:destroy]
+
   def create
     list = current_user.lists.new(list_params)
     if list.save
@@ -28,5 +31,17 @@ class ListsController < ApplicationController
   private
     def list_params
       params.require(:list).permit(:name)
+    end
+    
+    def signed_in_user
+      unless signed_in?
+        flash[:danger] = "Please sign in to access this function."
+        redirect_to signin_path
+      end
+    end
+    
+    def correct_user
+      user_id = List.find(params[:id]).user_id
+      redirect_to root_path unless current_user?(user_id)
     end
 end
