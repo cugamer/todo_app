@@ -5,4 +5,27 @@
 #list-container {
   clear: both;
   margin-top: 15px;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.list-item{
+  padding-top: 5px;
+  height: 40px;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  
+}
+
+.list-name{
+  padding-left: 30px;
+  width: 80%;
+  float: left;
+}
+
+.li-delete{
+  width: 20%;
+  float: right;
 }

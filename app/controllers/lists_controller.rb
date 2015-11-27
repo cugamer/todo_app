@@ -42,6 +42,6 @@ class ListsController < ApplicationController
     
     def correct_user
       user_id = List.find(params[:id]).user_id
-      redirect_to root_path unless current_user?(user_id)
+      redirect_to root_path unless current_user?(User.find(user_id))
     end
 end
