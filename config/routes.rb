@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root                     'general_pages#homepage'
   
   get 'help'            => 'general_pages#help'
