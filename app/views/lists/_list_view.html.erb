@@ -1,1 +1,16 @@
-<p>lists</p>
+<% if signed_in? %>
+  <div class="wide-form">
+    <%= form_for :list, url: createlist_path do |f| %>
+      <%= f.label "List name" %>
+      <%= f.text_field :name %>
+      
+      <%= f.submit "Create list" %>
+    <% end %>
+  </div>
+  
+  <ul id="list-container">
+    <% @lists.each do |list| %>
+      <li class="list-item"><%= list.name %></li>
+    <% end %>
+  </ul>
+<% end %>
