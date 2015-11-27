@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   
   get 'help'            => 'general_pages#help'
   
-  get 'signup'          => 'sessions#new'
-  post 'signup'         => 'sessions#create'
+  get 'signin'          => 'sessions#new'
+  post 'signin'         => 'sessions#create'
   delete 'signout'      => 'sessions#destroy'
   
   resources 'users'
