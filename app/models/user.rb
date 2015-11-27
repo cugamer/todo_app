@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 250 },
                     format: VALID_EMAIL_REGEX,
                     uniqueness: { case_sensitive: false }
+                    
+  before_save { self.email = email.downcase }
 end
