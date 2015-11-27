@@ -11,6 +11,20 @@ class ListsController < ApplicationController
     render 'general_pages/homepage'
   end
   
+  def destroy
+    list = List.find(params[:id])
+    name = list.name
+    
+    if list.destroy
+      flash.now[:success] = "The #{name} list was removed successfully."
+    else
+      flash.now[:danger] = "The #{name} list was not removed."
+    end
+    
+    @lists = current_user.lists.all
+    render 'general_pages/homepage'
+  end
+  
   private
     def list_params
       params.require(:list).permit(:name)
