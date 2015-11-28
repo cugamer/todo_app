@@ -1,11 +1,31 @@
 <h1><%= @task_list.name %>s tasks</h1>
 
+<ul>
+  <% flash.each do |msg_key, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
+
 <div class="wide-form">
   <%= form_for :task, url: create_task_path do |f| %>
+    <%= f.hidden_field :list_id, value: @task_list.id %>
+  
     <%= f.label "Task name" %>
-    <%= f.text_field :task %>
+    <%= f.text_field :name %>
     
     <%= f.submit "Create task" %>
   
   <% end %>
 </div>
+
+<% if @tasks.any? %>
+  <ul id="list-container">
+    <% @tasks.each do |task| %>
+      <li><%= task.name %></li>
+    <% end %>
+  
+  </ul>
+
+<% end %>
+
