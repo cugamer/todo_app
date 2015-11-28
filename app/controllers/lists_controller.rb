@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     end
     
     @lists = current_user.lists.all
-    render 'general_pages/homepage'
+    redirect_to root_path
   end
   
   def destroy
@@ -19,13 +19,13 @@ class ListsController < ApplicationController
     name = list.name
     
     if list.destroy
-      flash.now[:success] = "The #{name} list was removed successfully."
+      flash[:success] = "The #{name} list was removed successfully."
     else
-      flash.now[:danger] = "The #{name} list was not removed."
+      flash[:danger] = "The #{name} list was not removed."
     end
     
     @lists = current_user.lists.all
-    render 'general_pages/homepage'
+    redirect_to root_path
   end
   
   private
