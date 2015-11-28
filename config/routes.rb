@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   root                     'general_pages#homepage'
   
   get 'help'                      => 'general_pages#help'
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
   
   post 'createlist'               => 'lists#create'
   delete 'remove_list/:id'        => 'lists#destroy', as: 'remove_list'
+  
+  get 'tasks/:id'                 => 'tasks#index', as: 'show_tasks'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
