@@ -5,3 +5,23 @@
 .uncomplete {
   opacity: .25;
 }
+
+.task-item {
+  height: 50px;
+  border-bottom: 1px solid black;
+  li {
+    display: inline-block;
+    line-height: 50px;
+  }
+}
+
+.task-name {
+  margin-left: 20px;
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.task-delete, .task-complete{
+  float: right;
+  margin-right: 20px;
+}
