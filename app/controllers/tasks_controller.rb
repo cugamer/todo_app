@@ -22,6 +22,7 @@ class TasksController < ApplicationController
   
   def destroy
     task = Task.find(params[:id])
+    list_id = task.list_id
     @task_list = List.find(task.list_id)
     @tasks = @task_list.tasks
     task_name = task.name
@@ -31,7 +32,7 @@ class TasksController < ApplicationController
       flash[:danger] = "The task was not removed"
     end
     
-    render 'index'
+    redirect_to show_tasks_path(list_id)
   end
   
   def complete
