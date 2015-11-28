@@ -19,6 +19,20 @@ class TasksController < ApplicationController
     redirect_to show_tasks_path(list.id)
   end
   
+  def destroy
+    task = Task.find(params[:id])
+    @task_list = List.find(task.list_id)
+    @tasks = @task_list.tasks
+    task_name = task.name
+    if task.destroy
+      flash[:success] = "The \"#{task_name}\" task was successfully removed."
+    else
+      flash[:danger] = "The task was not removed"
+    end
+    
+    render 'index'
+  end
+  
   private
     def task_params
       params.require(:task).permit(:name, :list_id)
