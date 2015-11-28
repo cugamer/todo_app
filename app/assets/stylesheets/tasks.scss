@@ -15,6 +15,10 @@
   }
 }
 
+.task-item:last-child {
+  border: none;
+}
+
 .task-name {
   margin-left: 20px;
   font-size: 2em;
