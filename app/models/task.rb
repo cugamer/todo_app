@@ -3,5 +3,4 @@ class Task < ActiveRecord::Base
   
   validates :name, presence: true, length: { maximum: 100 }
   
-  after_initialize { self.completed = false } 
 end

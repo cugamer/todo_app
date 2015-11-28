@@ -27,6 +27,11 @@
         <li class="li-delete"><%= link_to "Remove task", remove_task_path(task.id),
                                     method: :delete, 
                                     data: { confirm: "Are you sure you want to delete this task?" } %></li>
+        <% if task.completed == true %>
+          <li><%= link_to "Mark uncompleted", mark_task_path(task.id), method: :patch %></li>
+        <% else %>
+          <li><%= link_to "Mark completed", mark_task_path(task.id), method: :patch %></li>
+        <% end %>
       </div>
     <% end %>
   </ul>

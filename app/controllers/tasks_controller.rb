@@ -9,6 +9,7 @@ class TasksController < ApplicationController
   def create
     list = List.find(task_params[:list_id])
     task = list.tasks.new(task_params)
+    task.completed = false
     
     if task.save
       flash[:success] = "New task was created"
@@ -31,6 +32,17 @@ class TasksController < ApplicationController
     end
     
     render 'index'
+  end
+  
+  def complete
+    task = Task.find(params[:id])
+    list = List.find(task.list_id)
+    if task.completed == true
+      task.update(completed: false)
+    else
+      task.update(completed: true)
+    end
+    redirect_to show_tasks_path(list.id)
   end
   
   private
