@@ -1,2 +1,11 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1><%= @task_list.name %>s tasks</h1>
+
+<div class="wide-form">
+  <%= form_for :task, url: create_task_path do |f| %>
+    <%= f.label "Task name" %>
+    <%= f.text_field :task %>
+    
+    <%= f.submit "Create task" %>
+  
+  <% end %>
+</div>

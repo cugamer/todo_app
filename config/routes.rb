@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   delete 'remove_list/:id'        => 'lists#destroy', as: 'remove_list'
   
   get 'tasks/:id'                 => 'tasks#index', as: 'show_tasks'
+  post 'create_task'              => 'tasks#create'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
