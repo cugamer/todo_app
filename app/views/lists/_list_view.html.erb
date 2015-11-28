@@ -4,8 +4,10 @@
       <li><%= msg %></li>
     <% end %>
   </ul>
+  
+  <a href="#add-list-form" class="toggle">Add a new list</a>
 
-  <div class="wide-form">
+  <div class="wide-form hidden" id="add-list-form">
     <%= form_for :list, url: createlist_path do |f| %>
       <%= f.label "List name" %>
       <%= f.text_field :name %>
@@ -14,16 +16,18 @@
     <% end %>
   </div>
   
-  <ul id="list-container">
-    <% @lists.each do |list| %>
-      <%= link_to show_tasks_path(list.id) do %>
-        <div class="list-item">
-          <li class="list-name"><%= list.name %></li>
-          <li class="li-delete"><%= link_to "Remove list", remove_list_path(list.id),
-                                    method: :delete, 
-                                    data: { confirm: "Are you sure you want to delete this list?" } %></li>
-        </div>
+  <% if @lists.any? %>
+    <ul id="list-container">
+      <% @lists.each do |list| %>
+        <%= link_to show_tasks_path(list.id) do %>
+          <div class="list-item">
+            <li class="list-name"><%= list.name %></li>
+            <li class="li-delete"><%= link_to "Remove list", remove_list_path(list.id),
+                                      method: :delete, 
+                                      data: { confirm: "Are you sure you want to delete this list?" } %></li>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  <% end %>
 <% end %>
