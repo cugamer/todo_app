@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :lists, dependent: :destroy
+  has_many :tasks, through: :lists
   
   validates :name, presence: true, length: { maximum: 50 }
   
