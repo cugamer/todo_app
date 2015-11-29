@@ -16,10 +16,10 @@
     <% end %>
   </div>
   
-  <div>
-    <%= will_paginate @lists %>
+  <div class="digg_pagination">
+    <%= will_paginate @lists, :container => false %>
   </div>
- 
+   
   
   <% if @lists.any? %>
     <ul id="list-container">

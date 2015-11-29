@@ -22,8 +22,8 @@
   <% end %>
 </div>
 
-<div>
-  <%= will_paginate @tasks %>
+<div class="digg_pagination">
+  <%= will_paginate @tasks, :container => false %>
 </div>
 
 <% if @tasks.any? %>
