@@ -3,7 +3,7 @@ user = User.create(name:                    "James Bond",
                    password:                "moneypenny",
                    password_confirmation:   "moneypenny")
 
-user.create(name:                   "Sterling Archer",
+User.create(name:                   "Sterling Archer",
             email:                  "duchess@secret.gov",
             password:               "ocelot",
             password_confirmation:  "ocelot")
