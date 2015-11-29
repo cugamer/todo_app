@@ -22,6 +22,10 @@
   <% end %>
 </div>
 
+<div>
+  <%= will_paginate @tasks %>
+</div>
+
 <% if @tasks.any? %>
   <ul id="list-container">
     <% @tasks.each do |task| %>

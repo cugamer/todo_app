@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     @task_list = List.find(params[:id])
-    @tasks = @task_list.tasks
+    @tasks = @task_list.tasks.paginate(:page => params[:page], :per_page => 10)
     
     render 'index'
   end
