@@ -3,9 +3,14 @@ user = User.create(name:                    "James Bond",
                    password:                "moneypenny",
                    password_confirmation:   "moneypenny")
 
-10.times do |n|
+user.create(name:                   "Sterling Archer",
+            email:                  "duchess@secret.gov",
+            password:               "ocelot",
+            password_confirmation:  "ocelot")
+
+30.times do |n|
   list = user.lists.create(name: "list_#{n}")
-  10.times do |m|
+  30.times do |m|
     list.tasks.create(name: "task_#{m}")
   end
 end
