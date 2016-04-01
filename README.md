@@ -3,7 +3,7 @@ ToDo App project
 
 The fifth in my series of applications to build on my skills.  Again very simple, 
 just a basic to do app where users can create an account, create lists of tasks, 
-and create tasks within ieach list.  As this is a basic learning exercise the site 
+and create tasks within each list.  As this is a basic learning exercise the site 
 is not overly complex, nor does it use many advanced technologies.  Also, it is 
 incomplete, several important aspects of the site are missing.  Built over a two 
 day period from 11-28 to 11-29.
